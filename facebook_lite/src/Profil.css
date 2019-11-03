@@ -1,0 +1,55 @@
+body{
+   width: 100%;
+}
+body> header{
+	position: fixed; 
+	top: 0;
+	left: 0;
+	width: 100%;
+	list-style-type: none;
+	margin: none;
+	padding-top: 0px;
+	margin-top: 0px;
+	margin-left: 0%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.button{
+
+margin-top: 4%;
+float: right;
+padding-inline-start: 1%;
+padding-inline-end: 1%;
+margin-inline-start: 1%;
+margin-inline-end: 1%;
+
+}
+
+.info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.style{
+    float: right;
+}
+.card{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    margin-top: 20%;
+
+}
+
+.com{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+}
+.super{
+    float: left;
+}
