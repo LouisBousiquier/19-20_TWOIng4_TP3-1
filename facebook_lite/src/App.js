@@ -5,6 +5,13 @@ import './App.css';
 import { createRequire } from 'module';
 import {Nav, NavItem, NavLink} from 'reactstrap';
 
+class Bouttons extends React.Component {
+  render() {
+      return(
+          <button onClick={this.props.onClick}> {this.props.idbutton} </button>
+      );
+  }
+}
 
 class Profil extends React.Component{
   constructor(props){
@@ -60,11 +67,11 @@ class Profil extends React.Component{
       return(
          <body>
           <header>
-              <div className="button">
-                      <button onClick={()=>this.handleClick(0)}> {this.state.user[0].prenom}</button>
-                      <button onClick={()=>this.handleClick(1)}> {this.state.user[1].prenom}</button>
-                      <button onClick={()=>this.handleClick(2)}> {this.state.user[2].prenom}</button>
-              </div>
+            <div className="button">
+              <Bouttons idbutton={this.state.user[0].prenom} onClick={() => this.handleClick(0)}/>
+              <Bouttons idbutton={this.state.user[1].prenom} onClick={() => this.handleClick(1)}/>
+              <Bouttons idbutton={this.state.user[2].prenom} onClick={() => this.handleClick(2)}/>
+            </div>
           </header>
               
               <fieldset id={"card"} className={' card d-flex align-items-center border'}>
@@ -77,10 +84,8 @@ class Profil extends React.Component{
                   <article className={"info"}>
                       <div className={"first_name"} >
                           <p>{this.state.user[this.state.idUtilisateur].prenom}</p>
-                          
                       </div>
-                      
-                      
+
                       <div className={"last_name"}>
                           <p>{this.state.user[this.state.idUtilisateur].nom}</p>
                       </div>
