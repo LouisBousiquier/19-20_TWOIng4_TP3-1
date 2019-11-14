@@ -25,7 +25,7 @@ body{
   width: 100%;
 }
 body> header{
-
+ position: sticky;
  top: 0;
  left: 0;
  width: 100%;
@@ -41,14 +41,9 @@ body> header{
 }
 
 .buttons{
-  margin-right: 30%;
-  float: right;
+  margin-right: 20%;
   display: inline-flex;
-  background-color: #008CBA;
   margin-top: 4%;
-  margin-Right:10%;
-  
-
   }
 
 

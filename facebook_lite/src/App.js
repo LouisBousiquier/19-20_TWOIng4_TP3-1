@@ -3,14 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 import pp from './img/pp.png';
 
+//component qui gère les boutons de profil
 class Bouttons extends React.Component {
   render() {
       return(
-          <button type="button" id="bt" style={{backgroundColor: 'blue' , margintop: '7%', paddingTop:'15%',paddingBottom:'15%', font:'Bold 13px Arial', borderRadius:'12px 0 12px 0', paddingInlineStart: '15%', paddingInlineEnd:'15%', marginInlineStart:'7%',marginInlineEnd:'7%'}} onClick={this.props.onClick} > {this.props.idbutton} </button>
+          <button type="button" id="bt" style={{backgroundColor: '#008CBA', textAlign: 'center' , margintop: '7%', paddingTop:'15%',paddingBottom:'15%', font:'Bold 13px Arial', borderRadius:'12px 0 12px 0', paddingInlineStart: '15%', paddingInlineEnd:'15%', marginInlineStart:'7%',marginInlineEnd:'7%'}} onClick={this.props.onClick} > {this.props.idbutton} </button>
       );
   }
 }
 
+//component principal d'affichage, déclaration des infos et fonction de mise à jour
 class Profil extends React.Component{
   constructor(props){
       super(props);
@@ -27,8 +29,6 @@ class Profil extends React.Component{
                   commentaire : "ligl",
                   background : "white",
                   color : "black",
-                  //liked : false,
-                  //likeCounter :0,
               },
               {
                   prenom : "hdf",
@@ -38,8 +38,6 @@ class Profil extends React.Component{
                   commentaire : "idg",
                   background : "white",
                   font : "black",
-                  liked : false,
-                  likeCounter :0,
               },
               {
                   prenom : "khg",
@@ -49,40 +47,68 @@ class Profil extends React.Component{
                   commentaire : "jdfh",
                   background : "white",
                   font : "black",
-                  liked : false,
-                  likeCounter :0,
               }
           ],
-          idUtilisateur : 0
+          idUtilisateur : 0,
+          likeCounter0 :0,
+          likeCounter1 :0,
+          likeCounter2 :0
       };      
-      //this.handleClick= this.handleClick.bind(this);
   }
+
+  //fonction qui modifie l'id de l'utilisateur (pour changer de profil)
   handleClick(i){
       this.setState({idUtilisateur : i})
   }
+
+  //fonction qui change la couleur du background et le texte de la fiche
   changeBackground() {
     if (this.state.background === "white"){
       this.setState(
         state => ({background : "black" , color: "white"
       }));
-      //alert(this.state.user[this.state.idUtilisateur].background)
-      //{alert(this.state.idUtilisateur)}
     } else {
       this.setState(
         state => ({background : "white" , color: "black"
       }));
-      //alert(this.state.user[this.state.idUtilisateur].background)
     }
   }
 
   //fonction pour liker (le "c'est super")
   super(){
-    let likeCounter = this.state.likeCounter;
-   // likeCounter += !this.state.liked ? 1 : -1
-   this.setState({
-     likeCounter : likeCounter +1
-   }) 
+    //si l'utilisateur est l'utilisateur 0
+   if (this.state.idUtilisateur===0){
+      let likeCounter0 = this.state.likeCounter0;
+      this.setState({
+        likeCounter0 :likeCounter0 +1
+      })
+     }
+   if (this.state.idUtilisateur===1){
+      let likeCounter1 = this.state.likeCounter1;
+      this.setState({
+        likeCounter1 :likeCounter1 +1
+      })
+     }
+   if (this.state.idUtilisateur===2){
+      let likeCounter2 = this.state.likeCounter2;
+      this.setState({
+        likeCounter2 :likeCounter2 +1
+      })
+     }
 }
+
+//fonction qui affiche le compteur de like du profil
+  superaff(){
+    if (this.state.idUtilisateur===0) {
+      return this.state.likeCounter0;
+    }
+    if (this.state.idUtilisateur===1) {
+      return this.state.likeCounter1;
+    }
+    if (this.state.idUtilisateur===2) {
+      return this.state.likeCounter2;
+    }
+  }
   render(){
       return(
          <body>
@@ -129,7 +155,7 @@ class Profil extends React.Component{
               />
               <button className="super" id="super" onClick={() => this.super()} >
           c'est super</button>
-          <p style={{color: 'red'}}>{this.state.like}lk</p>
+          <p>{this.superaff()}</p>
           </fieldset>
 
               </body>
@@ -137,6 +163,7 @@ class Profil extends React.Component{
   }
 }
 
+//component qui gère 'affichage du commentaire
 class Com extends React.Component{
 
   render(){
