@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import pp from './img/pp.png';
+import husky from './img/husky.jpg';
+import dicaprio from './img/dicaprio.jpg';
 
 //component qui gère les boutons de profil
 class Bouttons extends React.Component {
@@ -22,29 +24,29 @@ class Profil extends React.Component{
           val: null,
           user : [
               {
-                  prenom : "blalzdjf",
-                  nom : "bousiquier" ,
+                  prenom : "Louis",
+                  nom : "Bousiquier" ,
                   image : pp,
                   date : "5 février 1997",
-                  commentaire : "ligl",
+                  commentaire : "J'ai réalisé mon premier TP en react native",
                   background : "white",
                   color : "black",
               },
               {
-                  prenom : "hdf",
-                  nom : "dosh",
-                  image : "./pp.png",
-                  date : "sdihf",
-                  commentaire : "idg",
+                  prenom : "Bruce",
+                  nom : "Cooper",
+                  image : husky,
+                  date : "4 mai 2002",
+                  commentaire : "Le husky de Sibérie ou husky sibérien ou tout simplement husky est une race de chien originaire de Sibérie orientale où il est traditionnellement élevé comme chien d'attelage.",
                   background : "white",
                   font : "black",
               },
               {
-                  prenom : "khg",
-                  nom : "jh",
-                  image : "./pp.png",
-                  date : "jdzifh",
-                  commentaire : "jdfh",
+                  prenom : "Leonardo",
+                  nom : "Dicaprio",
+                  image : dicaprio,
+                  date : "11 novembre 1974",
+                  commentaire : "The 5 Great Forests Initiative launched at the #UNClimateSummit to protect Central America’s five largest great forests—and the wildlife and indigenous people who live there—to the benefit of all life on Earth! #ClimateAction @thewcs @global_wildlife",
                   background : "white",
                   font : "black",
               }
@@ -109,6 +111,7 @@ class Profil extends React.Component{
       return this.state.likeCounter2;
     }
   }
+
   render(){
       return(
          <body>
@@ -155,7 +158,7 @@ class Profil extends React.Component{
               />
               <button className="super" id="super" onClick={() => this.super()} >
           c'est super</button>
-          <p>{this.superaff()}</p>
+          <span>{this.superaff()}</span>
           </fieldset>
 
               </body>
