@@ -39,20 +39,29 @@ body> header{
    flex-direction: row;
    justify-content: flex-end;
 }
-.button{
-margin-top: 4%;
-float: right;
-padding-inline-start: 1%;
-padding-inline-end: 1%;
-margin-inline-start: 1%;
-margin-inline-end: 1%;
 
-}
+.buttons{
+  margin-right: 30%;
+  float: right;
+  display: inline-flex;
+  background-color: #008CBA;
+  margin-top: 4%;
+  margin-Right:10%;
+  
+
+  }
+
 
 .info{
    display: flex;
    flex-direction: row;
    justify-content: space-evenly;
+}
+
+.date{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .style{
@@ -63,17 +72,23 @@ margin-inline-end: 1%;
    margin-right: auto;
    width: 60%;
    margin-top: 10%;
+   -moz-border-radius:8px;
+    -webkit-border-radius:8px;	
+    border-radius:8px
 
 }
 .image{
-   margin-right: auto;
-   margin-left: auto;
+   margin-right: 35%;
+   margin-left: 35%;
 }
 .com{
    width: 60%;
    margin-left: auto;
    margin-right: auto;
    margin-top: 10%;
+   -moz-border-radius:8px;
+   -webkit-border-radius:8px;	
+   border-radius:8px
 }
 .super{
    float: left;
