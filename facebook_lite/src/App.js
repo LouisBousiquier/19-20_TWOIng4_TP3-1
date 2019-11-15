@@ -20,8 +20,6 @@ class Profil extends React.Component{
       super(props);
       this.super = this.super.bind(this);
       this.state= {
-        
-          val: null,
           user : [
               {
                   prenom : "Louis",
